@@ -3,3 +3,5 @@
 *.iml
 gradle
 local.properties
+src/androidTest/
+src/test/
