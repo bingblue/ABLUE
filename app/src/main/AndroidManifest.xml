@@ -7,13 +7,12 @@
 
 
     <application
-        android:name=".ZApplication"
+        android:name=".common.ZApplication"
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".activities.login.LaunchActivity">
+        <activity android:name=".login_logout.activity.LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.login.Login"
+            android:name=".login_logout.activity.Login"
             android:screenOrientation="portrait" />
     </application>
 

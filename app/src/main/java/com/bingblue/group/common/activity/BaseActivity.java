@@ -1,4 +1,4 @@
-package com.bingblue.group.activities;
+package com.bingblue.group.common.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
-import com.bingblue.group.ZApplication;
+import com.bingblue.group.common.ZApplication;
 import com.bingblue.group.utils.ActivityUtil;
 
 /**

@@ -1,4 +1,4 @@
-package com.bingblue.group.activities.login;
+package com.bingblue.group.login_logout.activity;
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import com.bingblue.group.R;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
-import com.bingblue.group.activities.BaseActivity;
+import com.bingblue.group.common.activity.BaseActivity;
 
 
 public class LaunchActivity extends BaseActivity {

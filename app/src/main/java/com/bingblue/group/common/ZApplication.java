@@ -1,4 +1,4 @@
-package com.bingblue.group;
+package com.bingblue.group.common;
 
 import android.app.Application;
 
