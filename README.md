@@ -30,12 +30,12 @@
 > * CN官网：[http://fresco-cn.org/][2]
 > * GitHub：[https://github.com/facebook/fresco][3]
 
-- XUtil - 国内侵入式框架 分为网络请求，数据库orm框架，UI 的 ioc框架，bitmap框架
-> * Github:[https://github.com/wyouflf/xUtils][4]
-> * 介绍：[http://www.oschina.net/p/xutils][5]
+ <!--XUtil - 国内侵入式框架 分为网络请求，数据库orm框架，UI 的 ioc框架，bitmap框架 -->
+<!-- > * Github:[https://github.com/wyouflf/xUtils][4]||-->
+<!-- > * 介绍：[http://www.oschina.net/p/xutils][5]||-->
 
 [1]:	http://frescolib.org/index.html
 [2]:	http://fresco-cn.org/
 [3]:	https://github.com/facebook/fresco
 [4]:	https://github.com/wyouflf/xUtils
-[5]:	http://www.oschina.net/p/xutils
+[5]:	http://www.oschina.net/p/xutils||
