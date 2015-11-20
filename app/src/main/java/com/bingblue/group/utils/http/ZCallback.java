@@ -9,19 +9,38 @@ import java.io.IOException;
 /**
  * Created by zing on 15/11/6.
  */
-public abstract class ZCallback implements Callback {
-    public void beforeRequest() {
+public class ZCallback<T> implements Callback {
+
+    private Callback callback = new Callback() {
+        @Override
+        public void onFailure(Request request, IOException e) {
+            ZCallback.this.onFailure(request, e);
+        }
+
+        @Override
+        public void onResponse(Response response) throws IOException {
+            ZCallback.this.onResponse(response);
+        }
+    };
+
+    public void onStart() {
+
     }
 
-    ;
+    public void onProgress(long currentBytes, long contentLength, boolean done) {
 
-    @Override
+    }
+
+    public void onResponse(Response response) {
+
+    }
+
     public void onFailure(Request request, IOException e) {
 
     }
 
-    @Override
-    public void onResponse(Response response) throws IOException {
-
+    public Callback getCallback() {
+        return callback;
     }
+
 }
