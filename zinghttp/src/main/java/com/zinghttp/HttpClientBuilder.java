@@ -1,9 +1,9 @@
-package com.bingblue.group.utils.http;
+package com.zinghttp;
 
 import android.util.Log;
 
-import com.bingblue.group.utils.http.entity.ProgressResponseBody;
-import com.bingblue.group.utils.http.listener.UIProgressListener;
+import com.zinghttp.entity.ProgressResponseBody;
+import com.zinghttp.listener.UIProgressListener;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Interceptor;
 import com.squareup.okhttp.MediaType;
@@ -27,8 +27,12 @@ public class HttpClientBuilder {
     private ZCallback callback = null;
     private String url;
 
-    public HttpClientBuilder addUrl(String url) {
-        this.url = url;
+    private HttpClientBuilder() {
+    }
+
+    public static HttpClientBuilder newInstance(OkHttpClient client) {
+        builder = new HttpClientBuilder();
+        builder.client = client;
         return builder;
     }
 
@@ -38,9 +42,8 @@ public class HttpClientBuilder {
         return builder;
     }
 
-    public static HttpClientBuilder newInstance(OkHttpClient client) {
-        builder = new HttpClientBuilder();
-        builder.client = client;
+    public HttpClientBuilder addPostUrl(String url) {
+        this.url = url;
         return builder;
     }
 
@@ -63,13 +66,22 @@ public class HttpClientBuilder {
                         .build();
             }
         });
-        call = client.newCall(new Request.Builder().url(url).post(requestBody).build());
+        if (null != requestBody) {
+            call = client.newCall(new Request.Builder().url(url).post(requestBody).build());
+        } else {
+            call = client.newCall(new Request.Builder().url(url).build());
+        }
         return builder;
     }
 
     public void sendRequest() {
         Log.i("sendRequest", "sendRequest");
         builder.call.enqueue(callback);
+    }
+
+    public HttpClientBuilder addGetUrl(String url) {
+        this.url = url;
+        return builder;
     }
 }
 

@@ -1,5 +1,6 @@
-package com.bingblue.group.utils.http;
+package com.zinghttp;
 
+import com.alibaba.fastjson.JSON;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -22,18 +23,31 @@ public class ZCallback<T> implements Callback {
             ZCallback.this.onResponse(response);
         }
     };
+    private String jsonStr;
 
     public void onStart() {
 
     }
 
     public void onProgress(long currentBytes, long contentLength, boolean done) {
-
     }
 
     public void onResponse(Response response) {
-
+        try {
+            onResponse(response.body().string());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
+    public void onResponse(String responseStr) {
+        this.jsonStr = responseStr;
+    }
+
+    public T getBean(Class<T> returnType) {
+        return JSON.parseObject(jsonStr, returnType);
+    }
+
 
     public void onFailure(Request request, IOException e) {
 

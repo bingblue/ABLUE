@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.bingblue.group.utils.http.entity;
+package com.zinghttp.entity;
 
-import com.bingblue.group.utils.http.listener.ProgressListener;
+import com.zinghttp.listener.ProgressListener;
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.ResponseBody;
 

@@ -1,10 +1,10 @@
-package com.bingblue.group.utils.http.listener;
+package com.zinghttp.listener;
 
 import android.os.Handler;
 import android.os.Message;
 
-import com.bingblue.group.utils.http.entity.ProgressModel;
-import com.bingblue.group.utils.http.handler.ProgressHandler;
+import com.zinghttp.entity.ProgressModel;
+import com.zinghttp.handler.ProgressHandler;
 
 /**
  * Created by zing on 15/11/16.

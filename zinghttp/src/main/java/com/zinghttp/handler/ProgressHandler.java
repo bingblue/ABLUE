@@ -1,11 +1,11 @@
-package com.bingblue.group.utils.http.handler;
+package com.zinghttp.handler;
 
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-import com.bingblue.group.utils.http.entity.ProgressModel;
-import com.bingblue.group.utils.http.listener.UIProgressListener;
+import com.zinghttp.entity.ProgressModel;
+import com.zinghttp.listener.UIProgressListener;
 
 import java.lang.ref.WeakReference;
 

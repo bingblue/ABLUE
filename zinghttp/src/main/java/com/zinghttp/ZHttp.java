@@ -1,9 +1,7 @@
-package com.bingblue.group.utils.http;
+package com.zinghttp;
 
 
 import com.squareup.okhttp.OkHttpClient;
-
-import java.io.IOException;
 
 /**
  * Created by zing on 15/11/6.
@@ -13,11 +11,11 @@ public class ZHttp {
 
     public static void post(String Url, String jsonStr, ZCallback callback) {
         callback.onStart();
-        HttpClientBuilder.newInstance(client).addPostParam(jsonStr).addUrl(Url).addCallBack(callback).sendRequest();
+        HttpClientBuilder.newInstance(client).addPostParam(jsonStr).addPostUrl(Url).addCallBack(callback).sendRequest();
     }
 
     public static void get(String Url, ZCallback callback) {
-
+        HttpClientBuilder.newInstance(client).addGetUrl(Url).addCallBack(callback).sendRequest();
     }
 
     public static OkHttpClient getClient() {

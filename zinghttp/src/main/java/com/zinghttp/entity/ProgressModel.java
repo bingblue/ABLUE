@@ -1,4 +1,4 @@
-package com.bingblue.group.utils.http.entity;
+package com.zinghttp.entity;
 
 import com.alibaba.fastjson.JSON;
 
