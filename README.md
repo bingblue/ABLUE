@@ -1,6 +1,8 @@
 # agroup
 群官网，Android版，基于martial design
 
+#暂时不能运行,因为Zing的Http库还没完成(难产中...)
+
 **群名称** ： JAVA、Android、WEB、前端
 
 **群号** ： 206683621
