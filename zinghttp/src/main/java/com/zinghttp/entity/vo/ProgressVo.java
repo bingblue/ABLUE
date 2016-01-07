@@ -1,22 +1,15 @@
-package com.zinghttp.entity;
-
-
-import java.io.Serializable;
+package com.zinghttp.entity.vo;
 
 /**
- * Created by zing on 15/11/16.
+ * Created by zing on 15/12/2.
  */
-public class ProgressModel implements Serializable {
+public class ProgressVo {
 
-
-    //当前读取字节长度
     private long currentBytes;
-    //总字节长度
     private long contentLength;
-    //是否读取完成
     private boolean done;
 
-    public ProgressModel(long currentBytes, long contentLength, boolean done) {
+    public ProgressVo(long currentBytes, long contentLength, boolean done) {
         this.currentBytes = currentBytes;
         this.contentLength = contentLength;
         this.done = done;

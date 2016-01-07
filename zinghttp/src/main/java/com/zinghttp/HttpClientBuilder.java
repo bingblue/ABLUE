@@ -1,8 +1,9 @@
 package com.zinghttp;
 
-import android.util.Log;
+import android.text.TextUtils;
 
 import com.zinghttp.entity.ProgressResponseBody;
+import com.zinghttp.handler.HttpHandler;
 import com.zinghttp.listener.UIProgressListener;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Interceptor;
@@ -24,9 +25,8 @@ public class HttpClientBuilder {
     private RequestBody requestBody;
     private OkHttpClient client;
     private Call call;
-    private ZCallback callback = null;
     private String url;
-
+    private HttpHandle handle;
     private HttpClientBuilder() {
     }
 
@@ -38,6 +38,7 @@ public class HttpClientBuilder {
 
     public HttpClientBuilder addPostParam(String jsonStr) {
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+        jsonStr = TextUtils.isEmpty(jsonStr) ? "" : jsonStr;
         requestBody = RequestBody.create(JSON, jsonStr);
         return builder;
     }
@@ -47,22 +48,23 @@ public class HttpClientBuilder {
         return builder;
     }
 
-    public HttpClientBuilder addCallBack(final ZCallback callback) {
-        this.callback = callback;
+    public HttpClientBuilder addCallBack(ZCallback callback) {
+        handle = new HttpHandle(callback);
         final UIProgressListener uiProgressListener = new UIProgressListener() {
             @Override
             public void onUIProgress(long currentBytes, long contentLength, boolean done) {
-                callback.onProgress(currentBytes, contentLength, done);
+                handle.onProgress(currentBytes, contentLength, done);
             }
         };
         client.networkInterceptors().add(new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {
+                final UIProgressListener progressListener = uiProgressListener;
                 //拦截
                 Response originalResponse = chain.proceed(chain.request());
                 //包装响应体并返回
                 return originalResponse.newBuilder()
-                        .body(new ProgressResponseBody(originalResponse.body(), uiProgressListener))
+                        .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                         .build();
             }
         });
@@ -75,8 +77,8 @@ public class HttpClientBuilder {
     }
 
     public void sendRequest() {
-        Log.i("sendRequest", "sendRequest");
-        builder.call.enqueue(callback);
+        //TODO: 此处应该换线程,不知道是用RxJAVA 呢,还是用点别的啥
+        builder.call.enqueue(this.handle.getOkCallback());
     }
 
     public HttpClientBuilder addGetUrl(String url) {
