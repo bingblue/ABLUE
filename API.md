@@ -1,15 +1,9 @@
-# agroup
-群官网，Android版，基于martial design
 
-**群名称** ： JAVA、Android、WEB、前端
-
-**群号** ： 206683621
-
-## API解释 (如果你需要某个API请在此提出)
+# API解释 (如果你需要某个API请在此提出)
 
 *Tips:*  **请先在本地模拟数据**
 
-### 登录/登出(/login)（南京-zing）
+### 登录/登出(/login)
 1. 登录
 
 ```js

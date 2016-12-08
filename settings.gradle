@@ -1,1 +1,1 @@
-include ':app', ':zinghttp'
+include ':app', ':zinglibrary'

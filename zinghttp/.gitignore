@@ -1,9 +1,0 @@
-/build
-.gradle
-.idea
-*.iml
-gradle
-local.properties
-src/androidTest
-src/test/
-.DS_Store
