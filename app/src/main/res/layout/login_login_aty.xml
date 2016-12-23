@@ -36,8 +36,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="130dp"
-            android:background="@android:color/white"
-            android:hint="昵称"
+            android:background="@drawable/bg_edittext_login"
+            android:hint="@string/login_nickname"
             android:textAlignment="center" />
 
         <EditText
@@ -47,18 +47,18 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/user_name"
             android:layout_marginTop="10dp"
-            android:background="@android:color/white"
-            android:hint="邀请码"
+            android:background="@drawable/bg_edittext_login"
+            android:hint="@string/login_invitatecode"
             android:textAlignment="center" />
 
         <Button
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#42A7DD"
+            android:background="@drawable/bg_btnlogin_selector"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:text="登录" />
+            android:text="@string/login_login" />
     </RelativeLayout>
 
     <Button
@@ -68,7 +68,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:background="#0000"
-        android:text="戳小牧的菊花获取邀请码"
+        android:text="@string/login_promptinfo"
         android:textColor="@android:color/white" />
 
 </RelativeLayout>

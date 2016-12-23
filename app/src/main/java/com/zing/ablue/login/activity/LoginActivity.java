@@ -43,7 +43,6 @@ public class LoginActivity extends BaseActivity {
         webSettings.setBuiltInZoomControls(false);
         webSettings.setJavaScriptEnabled(true);
         webView.loadUrl("file:///android_asset/webpage/login_canvas_wbv.html");
-		Log.i(">>>>>>>",">>>>>test222222>>>>>");
 
     }
 

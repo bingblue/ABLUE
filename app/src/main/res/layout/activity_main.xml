@@ -23,7 +23,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.zing.ablue.welcome.activity.WelcomeActivity">
-    >
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/icon"
@@ -45,7 +44,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:text="南京-Zing"
+        android:text="@string/app_author"
         android:textColor="@android:color/darker_gray"
         android:textSize="9sp" />
 
@@ -56,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:text="© Copyright 2015 bingblue.com 冰蓝科技"
+        android:text="@string/app_company"
         android:textColor="@android:color/darker_gray"
         android:textSize="10sp" />
 

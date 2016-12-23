@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ABLUE</string>
+    <string name="app_author">南京-Zing</string>
+    <string name="app_company">© Copyright 2015 bingblue.com 冰蓝科技</string>
+
+    <string name="login_nickname">昵称</string>
+    <string name="login_invitatecode">邀请码</string>
+    <string name="login_login">登录</string>
+    <string name="login_promptinfo">戳小牧的菊花获取邀请码</string>
 </resources>
