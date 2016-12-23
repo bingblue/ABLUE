@@ -1,6 +1,7 @@
 package com.zing.ablue.login.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
@@ -42,7 +43,7 @@ public class LoginActivity extends BaseActivity {
         webSettings.setBuiltInZoomControls(false);
         webSettings.setJavaScriptEnabled(true);
         webView.loadUrl("file:///android_asset/webpage/login_canvas_wbv.html");
-		log.i(">>>>>>>",">>>>>test>>>>>");
+		Log.i(">>>>>>>",">>>>>test1>>>>>");
 
     }
 
