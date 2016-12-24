@@ -1,34 +1,43 @@
 package com.zing.ablue.welcome.activity;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.zing.ablue.R;
-import com.zing.ablue.common.activity.BaseActivity;
+import com.zing.ablue.common.activity.PengLeActivity;
 import com.zing.ablue.login.activity.LoginActivity;
+import com.zing.ablue.mainpage.activity.MainPageActivity;
 
 import butterknife.BindView;
 
-public class WelcomeActivity extends BaseActivity implements Animation.AnimationListener {
+public class WelcomeActivity extends PengLeActivity implements Animation.AnimationListener {
 
-    @BindView(R.id.app_icon) ImageView icon;
+    @BindView(R.id.app_icon)
+    ImageView icon;
 
     private boolean isWebWorkOver = false;
     private boolean isAnimationWorkOver = false;
 
+
     @Override
-    public int initContentView() {
-        return R.layout.activity_main;
+    protected void initView() {
+        Fresco.initialize(this);
+        setContentView(R.layout.welcome_aty);
     }
 
     @Override
     public void initData() {
-        Fresco.initialize(this);
         startAnimation();
         startPrepareBeforeMainActivityStart();
+    }
+
+    @Override
+    protected void initListener() {
+
     }
 
     @Override
@@ -59,7 +68,7 @@ public class WelcomeActivity extends BaseActivity implements Animation.Animation
 
     private void startAppMainUiActivity() {
         if (isWebWorkOver && isAnimationWorkOver) {
-            Intent intent = new Intent(this, LoginActivity.class);
+            Intent intent = new Intent(this, MainPageActivity.class);
             startActivity(intent);
         }
     }

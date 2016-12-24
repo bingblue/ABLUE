@@ -1,7 +1,8 @@
 # agroup
 Bing Blue 社区 Android版
 
-**群号** ： 206683621
+**群号** ： 206683621<br>
+**背锅群** ： 602291179
 
 # 暂定功能 (/agroup)
 
@@ -29,7 +30,9 @@ Bing Blue 社区 Android版
 + [OKHttp](http://square.github.io/okhttp/)
 + [PersistentCookieJar](https://github.com/franmontiel/PersistentCookieJar/blob/master/README.md) OKHttp的cookie管理工具
 + [Butter Knife](http://jakewharton.github.io/butterknife/)
++ [NavigationDrawer-MaterialDesign](https://github.com/rudsonlive/NavigationDrawer-MaterialDesign?utm_source=tuicool&utm_medium=referral)
 
+*排名按添加顺序*
 
 + ZingLibrary by:[Zing](http://micorochio.github.io/)
 

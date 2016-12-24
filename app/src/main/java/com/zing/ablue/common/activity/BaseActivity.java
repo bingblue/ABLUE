@@ -2,41 +2,31 @@ package com.zing.ablue.common.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.zing.ablue.ZApplication;
 import com.zing.ablue.common.utils.ActivityUtil;
 
 import butterknife.ButterKnife;
 
+
 /**
  * Created by zing on 2016/12/8.
  */
 
-public abstract class BaseActivity extends Activity {
+public class BaseActivity extends Activity {
     protected ZApplication application;
 
-    private String TAG;
+    public String TAG;
 
-    protected abstract int initContentView();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        try {
-            application = (ZApplication) getApplication();
-            TAG = this.getLocalClassName();
-
-            setContentView(initContentView());
-            ButterKnife.bind(this);
-
-            initData();
-        } catch (Exception e) {
-            e.printStackTrace();
-            showTip("初始化异常！");
-        }
+        application = (ZApplication) getApplication();
+        TAG = this.getLocalClassName();
     }
-
-    protected abstract void initData();
 
     @Override
     protected void onResume() {
@@ -54,6 +44,24 @@ public abstract class BaseActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         ActivityUtil.remove(this);
+    }
+
+    @Override
+    public void setContentView(int layoutResID) {
+        super.setContentView(layoutResID);
+        ButterKnife.bind(this);
+    }
+
+    @Override
+    public void setContentView(View view) {
+        super.setContentView(view);
+        ButterKnife.bind(this);
+    }
+
+    @Override
+    public void setContentView(View view, ViewGroup.LayoutParams params) {
+        super.setContentView(view, params);
+        ButterKnife.bind(this);
     }
 
     public void showTip(String content) {

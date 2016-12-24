@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.support.multidex.MultiDexApplication;
 
 import java.util.Map;
 
@@ -12,7 +13,7 @@ import java.util.Map;
  * Created by zing on 2016/12/8.
  */
 
-public class ZApplication extends Application{
+public class ZApplication extends MultiDexApplication{
     private Map<String, String> userInfo;//登陆的用户信息
 
 
