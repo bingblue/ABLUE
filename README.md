@@ -28,6 +28,7 @@ Bing Blue 社区 Android版
 + [fresco](http://fresco-cn.org/)
 + [OKHttp](http://square.github.io/okhttp/)
 + [PersistentCookieJar](https://github.com/franmontiel/PersistentCookieJar/blob/master/README.md) OKHttp的cookie管理工具
++ [Butter Knife](http://jakewharton.github.io/butterknife/)
 
 
 + ZingLibrary by:[Zing](http://micorochio.github.io/)
@@ -77,6 +78,23 @@ Bing Blue 社区 Android版
 
 代码提交者不要提交、引用不安全的代码
 
+# 注解模块
+使用[黄油刀(Butter Knife)](http://jakewharton.github.io/butterknife/)
+```java
+class ExampleActivity extends Activity {
+  @BindView(R.id.title) TextView title;
+  @BindView(R.id.subtitle) TextView subtitle;
+  @BindView(R.id.footer) TextView footer;
+
+  @Override public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.simple_activity);
+    ButterKnife.bind(this);
+    // TODO Use fields...
+  }
+}
+
+```
 
 # 数据库模块的使用方法
 xUtils的DB模块使用方法一样（因为原来的xUtil对Android6以上的支持不太好，所以只抽出DB模块）
