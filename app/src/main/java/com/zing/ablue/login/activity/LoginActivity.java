@@ -1,7 +1,5 @@
 package com.zing.ablue.login.activity;
 
-import android.os.Bundle;
-import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
@@ -17,21 +15,23 @@ public class LoginActivity extends BaseActivity {
     private WebView webView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void setContent() {
         Fresco.initialize(this);
         setContentView(R.layout.login_login_aty);
-        init();
-
     }
 
-    private void init() {
-        findViews();
-        addViewAction();
+    @Override
+    public void initView() {
+        webView = (WebView) findViewById(R.id.login_bg_view);
     }
 
-    private void addViewAction() {
-    setUpWebView();
+    @Override
+    public void initData() {
+        setUpWebView();
+    }
+
+    @Override
+    public void initListener() {
 
     }
 
@@ -43,10 +43,6 @@ public class LoginActivity extends BaseActivity {
         webSettings.setBuiltInZoomControls(false);
         webSettings.setJavaScriptEnabled(true);
         webView.loadUrl("file:///android_asset/webpage/login_canvas_wbv.html");
-
     }
 
-    private void findViews() {
-        webView = (WebView) findViewById(R.id.login_bg_view);
-    }
 }
