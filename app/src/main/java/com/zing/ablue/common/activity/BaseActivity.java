@@ -6,6 +6,8 @@ import android.os.Bundle;
 import com.zing.ablue.ZApplication;
 import com.zing.ablue.common.utils.ActivityUtil;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by zing on 2016/12/8.
  */
@@ -15,30 +17,26 @@ public abstract class BaseActivity extends Activity {
 
     private String TAG;
 
+    protected abstract int initContentView();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        application = (ZApplication) getApplication();
-        TAG = this.getLocalClassName();
         try {
-            setContent();
-            initView();
+            application = (ZApplication) getApplication();
+            TAG = this.getLocalClassName();
+
+            setContentView(initContentView());
+            ButterKnife.bind(this);
+
             initData();
-            initListener();
         } catch (Exception e) {
             e.printStackTrace();
             showTip("初始化异常！");
         }
     }
 
-    public abstract void setContent();
-
-    public abstract void initView();
-
-    public abstract void initData();
-
-    public abstract void initListener();
-
+    protected abstract void initData();
 
     @Override
     protected void onResume() {
@@ -56,7 +54,6 @@ public abstract class BaseActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         ActivityUtil.remove(this);
-
     }
 
     public void showTip(String content) {

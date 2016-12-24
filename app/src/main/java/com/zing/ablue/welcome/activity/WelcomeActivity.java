@@ -10,32 +10,25 @@ import com.zing.ablue.R;
 import com.zing.ablue.common.activity.BaseActivity;
 import com.zing.ablue.login.activity.LoginActivity;
 
+import butterknife.BindView;
+
 public class WelcomeActivity extends BaseActivity implements Animation.AnimationListener {
 
-    private ImageView icon;
+    @BindView(R.id.app_icon) ImageView icon;
+
     private boolean isWebWorkOver = false;
     private boolean isAnimationWorkOver = false;
 
     @Override
-    public void setContent() {
-        Fresco.initialize(this);
-        setContentView(R.layout.activity_main);
-    }
-
-    @Override
-    public void initView() {
-        icon = (ImageView) findViewById(R.id.app_icon);
+    public int initContentView() {
+        return R.layout.activity_main;
     }
 
     @Override
     public void initData() {
+        Fresco.initialize(this);
         startAnimation();
         startPrepareBeforeMainActivityStart();
-    }
-
-    @Override
-    public void initListener() {
-
     }
 
     @Override

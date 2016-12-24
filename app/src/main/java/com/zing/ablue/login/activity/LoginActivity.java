@@ -7,33 +7,28 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import com.zing.ablue.R;
 import com.zing.ablue.common.activity.BaseActivity;
 
+import butterknife.BindView;
+
+
 /**
  * Created by zing on 2016/12/8.
  */
 
 public class LoginActivity extends BaseActivity {
-    private WebView webView;
+
+    @BindView(R.id.login_bg_view) WebView webView;
 
     @Override
-    public void setContent() {
-        Fresco.initialize(this);
-        setContentView(R.layout.login_login_aty);
-    }
-
-    @Override
-    public void initView() {
-        webView = (WebView) findViewById(R.id.login_bg_view);
+    public int initContentView() {
+        return R.layout.login_login_aty;
     }
 
     @Override
     public void initData() {
+        Fresco.initialize(this);
         setUpWebView();
     }
 
-    @Override
-    public void initListener() {
-
-    }
 
     private void setUpWebView() {
         WebSettings webSettings = webView.getSettings();
