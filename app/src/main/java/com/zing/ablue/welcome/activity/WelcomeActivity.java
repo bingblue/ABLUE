@@ -1,7 +1,6 @@
 package com.zing.ablue.welcome.activity;
 
 import android.content.Intent;
-import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -9,8 +8,7 @@ import android.widget.ImageView;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.zing.ablue.R;
 import com.zing.ablue.common.activity.PengLeActivity;
-import com.zing.ablue.login.activity.LoginActivity;
-import com.zing.ablue.mainpage.activity.MainPageActivity;
+import com.zing.ablue.testhttp.activities.TestPageActivity;
 
 import butterknife.BindView;
 
@@ -68,7 +66,7 @@ public class WelcomeActivity extends PengLeActivity implements Animation.Animati
 
     private void startAppMainUiActivity() {
         if (isWebWorkOver && isAnimationWorkOver) {
-            Intent intent = new Intent(this, MainPageActivity.class);
+            Intent intent = new Intent(this, TestPageActivity.class);
             startActivity(intent);
         }
     }

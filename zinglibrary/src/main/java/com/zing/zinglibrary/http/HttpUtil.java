@@ -33,7 +33,7 @@ public class HttpUtil {
         return SingletonHolder.INSTANCE;
     }
 
-    public <T> void addCallBack(Observable o, final RequestCallback<T> callback) {
+    public <T> void sendRequest(Observable o, final RequestCallback<T> callback) {
         Subscriber s = new Subscriber<T>() {
             @Override
             public void onStart() {
