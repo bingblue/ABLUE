@@ -1,19 +1,19 @@
-package com.zing.ablue.testhttp.entities;
+package com.zing.ablue.login.network.entities;
 
 /**
  * Created by zing on 2017/1/8.
  */
 
 public class HttpResultEntity<T> {
-    private String code;
+    private int code;
     private String msg;
     private T body;
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(int code) {
         this.code = code;
     }
 

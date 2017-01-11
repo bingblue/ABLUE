@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zing.ablue">
 
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -12,13 +13,14 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Material.Light">
-        <!--<activity-->
-        <!--android:name=".welcome.activity.WelcomeActivity"-->
-            <!--android:theme="@android:style/Theme.Material.Light.NoActionBar.Fullscreen">-->
         <activity
-            android:name=".testhttp.activities.TestPageActivity"
+        android:name=".welcome.activity.WelcomeActivity"
             android:noHistory="true"
-            android:theme="@style/Theme.AppCompat">
+            android:theme="@android:style/Theme.Material.Light.NoActionBar.Fullscreen">
+        <!--<activity-->
+            <!--android:name=".testHttp.activities.TestPageActivity"-->
+            <!--android:noHistory="true"-->
+            <!--android:theme="@style/Theme.AppCompat">-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,11 +29,11 @@
         </activity>
         <activity
             android:name=".login.activity.LoginActivity"
+            android:noHistory="true"
             android:screenOrientation="portrait" />
-        <!--<activity-->
-        <!--android:name=".mainpage.activities.TestPageActivity"-->
-        <!--android:label="@string/settings">-->
-        <!--</activity>-->
+
+        <activity android:name=".login.activity.RegisterActivity"
+            android:noHistory="true" />
 
     </application>
 

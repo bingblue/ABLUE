@@ -4,12 +4,14 @@ import android.os.Bundle;
 
 
 public abstract class PengLeActivity extends BaseActivity {
+
+    public static final String BASE_URL = "http://www.bingblue.com/";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            initView();
-            initListener();
+            setContentView(initContentViewId());
             initData();
         } catch (Exception e) {
             e.printStackTrace();
@@ -17,9 +19,8 @@ public abstract class PengLeActivity extends BaseActivity {
         }
     }
 
-    protected abstract void initView();
+    protected abstract int initContentViewId();
 
     protected abstract void initData();
 
-    protected abstract void initListener();
 }

@@ -1,4 +1,4 @@
-package com.zing.ablue.testhttp.entities;
+package com.zing.ablue.login.network.entities;
 
 import android.text.TextUtils;
 
@@ -14,6 +14,7 @@ public class LoginRequestEntity {
     private String userPwd;
     private String loginType = "android";
     private String loginIp;
+    private String invitationCode;
 
     public String getUserName() {
         return userName;
@@ -47,11 +48,21 @@ public class LoginRequestEntity {
         this.loginIp = loginIp;
     }
 
+    public String getInvitationCode() {
+        return invitationCode;
+    }
+
+    public void setInvitationCode(String invitationCode) {
+        this.invitationCode = invitationCode;
+    }
+
     public String checkSelf() {
         if (TextUtils.isEmpty(userName.trim())) {
-            return "姓名不能为空";
+            return "姓名不能为空！";
         } else if (TextUtils.isEmpty(userPwd)) {
-            return "登录密码不能为空";
+            return "登录密码不能为空！";
+        }else if (TextUtils.isEmpty(invitationCode)){
+            return "邀请码不能为空！";
         }
         return null;
     }

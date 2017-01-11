@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.zing.ablue.R;
 import com.zing.ablue.common.activity.PengLeActivity;
-import com.zing.ablue.testhttp.activities.TestPageActivity;
+import com.zing.ablue.login.activity.LoginActivity;
 
 import butterknife.BindView;
 
@@ -20,22 +20,16 @@ public class WelcomeActivity extends PengLeActivity implements Animation.Animati
     private boolean isWebWorkOver = false;
     private boolean isAnimationWorkOver = false;
 
-
     @Override
-    protected void initView() {
+    protected int initContentViewId() {
         Fresco.initialize(this);
-        setContentView(R.layout.welcome_aty);
+        return R.layout.welcome_aty;
     }
 
     @Override
     public void initData() {
         startAnimation();
         startPrepareBeforeMainActivityStart();
-    }
-
-    @Override
-    protected void initListener() {
-
     }
 
     @Override
@@ -66,7 +60,7 @@ public class WelcomeActivity extends PengLeActivity implements Animation.Animati
 
     private void startAppMainUiActivity() {
         if (isWebWorkOver && isAnimationWorkOver) {
-            Intent intent = new Intent(this, TestPageActivity.class);
+            Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }
     }
