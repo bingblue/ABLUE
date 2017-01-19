@@ -33,7 +33,7 @@ public final class NativeIconTextView extends TextView {
 
     public void setFontFile(Context context) {
         AssetManager assetManager = context.getAssets();
-        Typeface t = Typeface.createFromAsset(assetManager, "fouts/icons.ttf");
+        Typeface t = Typeface.createFromAsset(assetManager, "fonts/icons.ttf");
         setTypeface(t);
     }
 }
