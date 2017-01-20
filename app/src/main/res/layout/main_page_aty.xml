@@ -23,16 +23,18 @@
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/white_background_with_shadow">
 
             <LinearLayout
+                android:id="@+id/go_main_page_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <!--<com.zing.ablue.mainpage.widget.NativeIconTextView-->
-                <TextView
+                <!--<TextView-->
+                <com.zing.ablue.mainpage.widget.NativeIconTextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center|bottom"
@@ -50,13 +52,14 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/go_find_something_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <!--<com.zing.ablue.mainpage.widget.NativeIconTextView-->
-                <TextView
+                <!--<TextView-->
+                <com.zing.ablue.mainpage.widget.NativeIconTextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center|bottom"
@@ -74,17 +77,18 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/go_find_service_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <!--<com.zing.ablue.mainpage.widget.NativeIconTextView-->
-                <TextView
+                <!--<TextView-->
+                <com.zing.ablue.mainpage.widget.NativeIconTextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center|bottom"
-                    android:text="&#61461;"
+                    android:text="&#61632;"
                     android:textSize="23dp"
                     android:layout_weight="1"/>
 
@@ -102,6 +106,7 @@
     </RelativeLayout>
 
     <FrameLayout
+        android:id="@+id/main_page_left_frg_lay"
         android:layout_width="260dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"></FrameLayout>
