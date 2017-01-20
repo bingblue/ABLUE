@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_page_line_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zing.ablue.mainpage.activity.MainPageActivity">
+
+    <include layout="@layout/main_page_toolbar"></include>
+
+    <include layout="@layout/main_page_main_drawer_lay"></include>
+
+</LinearLayout>

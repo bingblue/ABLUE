@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:id="@+id/main_page_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,7 +15,9 @@
             android:id="@+id/main_page_main_frg_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/main_page_bottom_menu_lay"></FrameLayout>
+            android:background="@android:color/holo_orange_light"
+            android:layout_alignParentBottom="true"
+            android:paddingBottom="49dp"></FrameLayout>
 
 
         <LinearLayout
@@ -24,7 +27,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:orientation="horizontal"
-            android:background="@drawable/white_background_with_shadow">
+            android:background="@drawable/shadow_up">
 
             <LinearLayout
                 android:id="@+id/go_main_page_btn"
@@ -107,8 +110,9 @@
 
     <FrameLayout
         android:id="@+id/main_page_left_frg_lay"
-        android:layout_width="260dp"
+        android:layout_width="280dp"
         android:layout_height="match_parent"
-        android:layout_gravity="start"></FrameLayout>
+        android:layout_gravity="start"
+        android:background="@android:color/white"></FrameLayout>
 
 </android.support.v4.widget.DrawerLayout>
