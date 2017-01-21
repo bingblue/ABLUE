@@ -65,7 +65,10 @@
             android:id="@+id/main_page_setting_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="35dp">
+            android:layout_marginTop="35dp"
+            android:divider="#ffffff"
+            android:dividerHeight="0px"
+            >
 
 
         </ListView>
