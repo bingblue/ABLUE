@@ -81,6 +81,10 @@ Bing Blue 社区 Android版
 
 代码提交者不要提交、引用不安全的代码
 
+# 雏形
+![图1](http://wx3.sinaimg.cn/mw690/6769474dgy1fbydhdmg69j20da0m1wgq.jpg)
+![图2](http://wx3.sinaimg.cn/mw690/6769474dgy1fbydhf4aigg20dc0n21kx.gif)
+
 # 注解模块
 使用[黄油刀(Butter Knife)](http://jakewharton.github.io/butterknife/)
 ```java
