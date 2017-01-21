@@ -13,5 +13,8 @@
     <string name="invitation_code">邀请码</string>
     <string name="invitation_confirm">确定</string>
     <string name="invitation_codeinfo">请联系QQ群:206683621(小牧COOL)\nJAVA、Android、Web、前端交流群，喜欢各种老师，韩老师，马老师，</string>
+    
+    <string name="mainpage_drawerlayout_open">侧滑打开</string>
+    <string name="mainpage_drawerlayout_close">侧滑关闭</string>
 
 </resources>
